@@ -42,6 +42,7 @@ export default async function Page({
           </Link>
         ))}
       </div>
+
       <div className="flex justify-end pb-8 w-full">
         <div className="inline-flex">
           <DynamicPagination totalPage={Math.ceil(movieResults.length / 20)} />

@@ -13,8 +13,9 @@ export const getMovieFromDB = async (category: string) => {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.TMDB_READ_TOKEN}`,
+        cache: "no-store",
       },
-    }
+    },
   );
 
   const popularMovies = await responsePopular.json();

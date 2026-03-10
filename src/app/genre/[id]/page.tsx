@@ -1,77 +1,3 @@
-// import Link from "next/link";
-// import { getMoviesByGenre } from "@/src/utils/tmdbApi";
-// import { getGenres } from "@/src/utils/tmdbApi";
-
-// interface Movie {
-//   id: number;
-//   title: string;
-//   poster_path: string;
-//   vote_average: number;
-// }
-
-// interface TMDBResponse {
-//   page: number;
-//   results: Movie[];
-//   total_pages: number;
-//   total_results: number;
-// }
-
-// interface PageProps {
-//   params: {
-//     id: string;
-//   };
-// }
-
-// const GenrePage = async ({ params }: PageProps) => {
-//   const genreNameOrId = params.id;
-//   const genres = await getGenres();
-
-//   const genre = genres.find((g) => {
-//     if (!genreNameOrId) return false;
-//     return (
-//       g.id.toString() === genreNameOrId ||
-//       g.name.toLowerCase() === genreNameOrId.toLowerCase()
-//     );
-//   });
-
-//   if (!genre) {
-//     return <p className="text-center mt-10 text-red-500">Invalid genre</p>;
-//   }
-
-//   const data = await getMoviesByGenre(genre.id.toString());
-//   const movies = data.results;
-
-//   return (
-//     <div className="max-w-[1440px] mx-auto px-4 py-10">
-//       <h1 className="text-2xl font-bold mb-8">{genre.name} Movies</h1>
-
-//       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-//         {movies.map((movie) => (
-//           <Link key={movie.id} href={`/movie/${movie.id}`}>
-//             <div className="bg-[#F4F4F5] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition">
-//               <img
-//                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-//                 alt={movie.title}
-//                 className="w-full aspect-[2/3] object-cover"
-//               />
-//               <div className="p-2">
-//                 <p className="font-medium text-sm line-clamp-2">
-//                   {movie.title}
-//                 </p>
-//                 <div className="flex items-center gap-1 text-xs mt-1">
-//                   ⭐ {movie.vote_average.toFixed(1)}
-//                   <span className="text-gray-500">/10</span>
-//                 </div>
-//               </div>
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default GenrePage;
 "use client";
 
 import { useEffect, useState } from "react";
@@ -134,7 +60,6 @@ export default function GenrePage() {
     <div className="max-w-[1316px] mx-auto px-4 py-10 gap-5 min-h-screen">
       <h3 className="text-[30px] font-bold text-black ">Search filter</h3>
       <div className="flex flex-col py-10 md:flex-row gap-10">
-        {/* Genres Sidebar */}
         <div className="w-full md:w-[320px] shrink-0">
           <div className="mt-2">
             <h3 className="text-[18px] font-bold text-black mb-4 max-sm:hidden">
@@ -167,7 +92,6 @@ export default function GenrePage() {
 
         <div className="hidden md:block w-px bg-[#E4E4E7] self-stretch" />
 
-        {/* Movies Grid */}
         <div className="flex-1">
           <div className="mb-8">
             <h1 className="text-[28px] font-bold text-black">
