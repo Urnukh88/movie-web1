@@ -6,6 +6,11 @@ import Link from "next/link";
 import { useRouter, useParams, useSearchParams } from "next/navigation";
 import { Star, ChevronRight } from "lucide-react";
 
+type Genre = {
+  id: number;
+  name: string;
+};
+
 export default function GenrePage() {
   const router = useRouter();
   const params = useParams();
@@ -18,7 +23,7 @@ export default function GenrePage() {
     results: [],
     total_pages: 1,
   });
-  const [allGenres, setAllGenres] = useState([]);
+  const [allGenres, setAllGenres] = useState<Genre[]>([]);
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
 
   const currentPage = Number(searchParams.get("page")) || 1;
