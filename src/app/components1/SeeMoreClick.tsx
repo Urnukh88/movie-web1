@@ -5,22 +5,24 @@ export type Movie = {
   id: number;
 };
 
-export const getMovieFromDB = async (category: string) => {
-  const responsePopular = await fetch(
-    `https://api.themoviedb.org/3/movie/${category}?language=en&page=1`,
+export const getMovieFromDB = async (
+  movieCategory: string,
+  page: number = 1,
+) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieCategory}?language=en-US&page=${page}`,
     {
-      method: "GET",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.TMDB_READ_TOKEN}`,
-        cache: "no-store",
       },
+      cache: "no-store",
     },
   );
 
-  const popularMovies = await responsePopular.json();
+  const data = await res.json();
 
-  const movieResults = popularMovies.results;
-
-  return { movieResults };
+  return {
+    movieResults: data.results || [],
+    total_pages: data.total_pages || 1,
+  };
 };

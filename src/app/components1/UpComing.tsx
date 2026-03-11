@@ -1,7 +1,6 @@
 import { SeeMoreButton } from "@/src/components/SeeMoreButton";
 import Link from "next/link";
 import { Movie, getMovieFromDB } from "./SeeMoreClick";
-import { DynamicPagination } from "../about/components/DynamicPagination";
 
 export const UpComing = async () => {
   const { movieResults }: { movieResults: Movie[] } =
@@ -16,7 +15,7 @@ export const UpComing = async () => {
         </Link>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-4 sm:gap-8">
         {movieResults.slice(0, 10).map((info) => (
           <Link
             key={info.id}

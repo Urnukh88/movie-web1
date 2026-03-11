@@ -19,7 +19,7 @@ export const TrailerPlayer = ({
   }, [trailerKey]);
 
   return (
-    <div className="relative w-full h-[428px] rounded-2xl bg-black shadow-lg overflow-hidden group">
+    <div className="relative w-full h-full rounded-lg bg-black overflow-hidden group">
       {!play ? (
         <div
           onClick={() => setPlay(true)}
@@ -33,9 +33,9 @@ export const TrailerPlayer = ({
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-          <div className="absolute bottom-10 left-8 flex items-center gap-4 max-sm:bottom-38">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
-              <Play className="text-black" size={18} />
+          <div className="absolute bottom-5 left-5 flex items-center gap-4">
+            <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
+              <Play className="text-black" size={14} />
             </div>
 
             <div className="flex gap-2 text-white">

@@ -161,7 +161,7 @@ export default async function MovieDetailPage({
           />
         </div>
 
-        <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-lg order-first md:order-0">
+        <div className=" relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-lg order-first md:order-0">
           {trailer ? (
             <TrailerPlayer
               trailerKey={trailer?.key || ""}

@@ -15,7 +15,7 @@ export const TopRated = async () => {
         </Link>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-4 sm:gap-8">
         {movieResults.slice(0, 10).map((info) => (
           <Link
             key={info.id}
